@@ -61,18 +61,25 @@ let isResizing = false;
 let startX, startY, startWidth, startHeight;
 let resizeHandle = null;
 
+// 스크롤 위치 반영 함수
+const getScrollOffset = () => ({
+  x: window.scrollX || document.documentElement.scrollLeft,
+  y: window.scrollY || document.documentElement.scrollTop,
+});
+
 // 마우스 다운 이벤트 (박스 생성 또는 드래그 시작)
 document.addEventListener('mousedown', (e) => {
   const target = e.target;
+  const scrollOffset = getScrollOffset();
 
   // 박스를 새로 생성
   if (!selectionBox) {
-    startX = e.pageX;
-    startY = e.pageY;
+    startX = e.pageX + scrollOffset.x;
+    startY = e.pageY + scrollOffset.y;
 
     selectionBox = document.createElement('div');
     selectionBox.style.position = 'absolute';
-    selectionBox.style.border = '2px dashed #000';
+    selectionBox.style.border = '1px dashed #000';
     selectionBox.style.background = 'rgba(0, 0, 0, 0.2)';
     selectionBox.style.backdropFilter = 'blur(10px)';
     selectionBox.style.left = `${startX}px`;
@@ -110,19 +117,24 @@ document.addEventListener('mousedown', (e) => {
     isDragging = true;
     startX = e.pageX;
     startY = e.pageY;
-    startWidth = parseInt(selectionBox.style.left, 10);
-    startHeight = parseInt(selectionBox.style.top, 10);
+    startWidth = parseInt(selectionBox.style.left, 10) - scrollOffset.x;
+    startHeight = parseInt(selectionBox.style.top, 10) - scrollOffset.y;
   }
 });
 
 // 마우스 이동 이벤트 (박스 드래그 또는 크기 조절)
 document.addEventListener('mousemove', (e) => {
+  if (!selectionBox) {
+    return;
+  }
+  const scrollOffset = getScrollOffset();
+
   if (isDragging) {
     const deltaX = e.pageX - startX;
     const deltaY = e.pageY - startY;
 
-    selectionBox.style.left = `${startWidth + deltaX}px`;
-    selectionBox.style.top = `${startHeight + deltaY}px`;
+    selectionBox.style.left = `${startWidth + deltaX + scrollOffset.x}px`;
+    selectionBox.style.top = `${startHeight + deltaY + scrollOffset.y}px`;
   }
 
   if (isResizing) {

@@ -16,21 +16,21 @@ document
   });
 });
 
-document
-.getElementById('capture')
-.addEventListener('click', async () => {
-  try {
-    const image = await chrome.tabs.captureVisibleTab(null, {format: 'png'});
-
-    // Blob으로 변환
-    const blob = await (await fetch(image)).blob();
-
-    // 파일 다운로드
-    const link = document.createElement('a');
-    link.href = URL.createObjectURL(blob);
-    link.download = 'blurred_screenshot.png';
-    link.click();
-  } catch (error) {
-    console.error('Error capturing screen:', error);
-  }
-});
+// document
+// .getElementById('capture')
+// .addEventListener('click', async () => {
+//   try {
+//     const image = await chrome.tabs.captureVisibleTab(null, {format: 'png'});
+//
+//     // Blob으로 변환
+//     const blob = await (await fetch(image)).blob();
+//
+//     // 파일 다운로드
+//     const link = document.createElement('a');
+//     link.href = URL.createObjectURL(blob);
+//     link.download = 'blurred_screenshot.png';
+//     link.click();
+//   } catch (error) {
+//     console.error('Error capturing screen:', error);
+//   }
+// });
