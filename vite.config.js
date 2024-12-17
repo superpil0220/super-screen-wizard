@@ -24,7 +24,7 @@ function buildRole(mode) {
         },
         resolve: {
           alias: {
-            '~@': resolve(__dirname, `src/${mode}`),
+            '~@': resolve(__dirname, "src"),
           },
         },
         publicDir: false,

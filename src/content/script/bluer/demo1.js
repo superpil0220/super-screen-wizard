@@ -1,5 +1,5 @@
 import Demo2 from "./demo2.js";
-import sampleImage from "~@/assets/sample.jpg";
+import sampleImage from "~@/content/assets/sample.jpg";
 
 export default function () {
   const image = document.createElement("img");

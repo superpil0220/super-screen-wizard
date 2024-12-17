@@ -16,7 +16,19 @@
 
 ---
 
-## 빌드
+## 템플릿 구조
+### jsconfig.json 
+```json
+{
+  "compilerOptions": {
+    "baseUrl": ".",
+    "paths": {
+      "~@/*": ["src/*"]
+    }
+  }
+}
+```
+* 경로 별칭 사용시 에디터에서 파일 경로 탐지 못하는 이슈로 설정함
 
 ### vite.config.js
 

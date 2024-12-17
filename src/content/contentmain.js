@@ -1,5 +1,5 @@
-import demo1 from "~@/script/bluer/demo1.js";
-import "~@/assets/contentstyle.css";
+import demo1 from "~@/content/script/bluer/demo1.js";
+import "~@/content/assets/contentstyle.css";
 
 chrome.runtime.onMessage.addListener((request, sender, sendResponse) => {
   console.log("Received request:", request);
