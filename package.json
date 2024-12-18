@@ -4,7 +4,7 @@
   "version": "0.0.0",
   "type": "module",
   "scripts": {
-    "dev": "vite",
+    "watch": "npx chokidar \"src/**\" -c \"npm run build\"",
     "build": "vite build && vite build --mode content && vite build --mode background",
     "preview": "vite preview"
   },
@@ -13,6 +13,7 @@
   },
   "devDependencies": {
     "@vitejs/plugin-vue": "^5.2.1",
+    "chokidar-cli": "^3.0.0",
     "vite": "^6.0.1"
   }
 }

@@ -31,6 +31,11 @@ function buildRole(mode) {
       }
       : {
         plugins: [vue()],
+        resolve: {
+          alias: {
+            '~@': resolve(__dirname, "src"),
+          },
+        },
       };
 }
 

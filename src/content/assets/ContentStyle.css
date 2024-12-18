@@ -1,3 +1,6 @@
+/*
+정리하기
+ */
 .aa {
   background: red;
   width: 100px;
@@ -11,4 +14,12 @@
 .image {
   width: 500px;
   height: 500px;
+}
+
+/*
+bluer
+ */
+body.blur-mode-cursor *,
+body.blur-mode-cursor *:hover {
+  cursor: crosshair !important;
 }
