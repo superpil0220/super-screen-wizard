@@ -1,25 +1,29 @@
 /*
-정리하기
- */
-.aa {
-  background: red;
-  width: 100px;
-  height: 100px;
-}
-
-.bb {
-  color: red;
-}
-
-.image {
-  width: 500px;
-  height: 500px;
-}
-
-/*
 bluer
  */
 body.blur-mode-cursor *,
 body.blur-mode-cursor *:hover {
   cursor: crosshair !important;
+}
+
+.blur-box {
+  position: absolute;
+  border: 1px solid #000;
+  background: rgba(255, 255, 255, 0.5);
+  backdrop-filter: blur(5px);
+  z-index: 10000;
+}
+
+.resize-handle {
+  position: absolute;
+  width: 10px;
+  height: 10px;
+  background: blue;
+  border-radius: 50%;
+  cursor: pointer;
+  z-index: 10001;
+}
+
+.resize-handle:hover {
+  cursor: grab;
 }
