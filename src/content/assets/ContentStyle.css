@@ -6,24 +6,30 @@ body.blur-mode-cursor *:hover {
   cursor: crosshair !important;
 }
 
-.blur-box {
+.start-drawing-blur-box{
   position: absolute;
-  border: 1px solid #000;
-  background: rgba(255, 255, 255, 0.5);
+  width: 1px;
+  height: 1px;
+  border: 1px dashed #000;
+  background: rgba(250, 248, 248, 0.5);
   backdrop-filter: blur(5px);
   z-index: 10000;
 }
 
-.resize-handle {
+.bluer-box{
+  border: none;
+}
+
+.bluer-box:hover{
+  border: 1px dashed #737373;
+}
+
+.bluer-box:hover .resize-handler{
   position: absolute;
   width: 10px;
   height: 10px;
-  background: blue;
-  border-radius: 50%;
-  cursor: pointer;
+  background: #b2b2ee;
+  border-radius: 100%;
   z-index: 10001;
-}
-
-.resize-handle:hover {
   cursor: grab;
 }
