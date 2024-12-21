@@ -23,13 +23,14 @@ body.blur-mode-cursor *:hover {
   width: 1px;
   height: 1px;
   border: 1px dashed #000;
-  background: rgba(33, 33, 33, 0.5);
+  background: rgba(224, 222, 222, 0.5);
   backdrop-filter: blur(5px);
   z-index: 10001;
 }
 
 .bluer-box{
   border: none;
+  cursor: grab;
 }
 
 .bluer-box:hover{
@@ -40,7 +41,7 @@ body.blur-mode-cursor *:hover {
   position: absolute;
   width: 10px;
   height: 10px;
-  background: #b2b2ee;
+  background: #545454;
   border-radius: 100%;
   z-index: 10001;
   cursor: grab;
