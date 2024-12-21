@@ -6,14 +6,26 @@ body.blur-mode-cursor *:hover {
   cursor: crosshair !important;
 }
 
+.bluer-background {
+  background: rgba(238, 238, 238, 0.5);
+  width: 100vw;
+  height: 100vh;
+  position: fixed;
+  left: 0;
+  right: 0;
+  top: 0;
+  bottom: 0;
+  z-index: 10000;
+}
+
 .start-drawing-blur-box{
   position: absolute;
   width: 1px;
   height: 1px;
   border: 1px dashed #000;
-  background: rgba(250, 248, 248, 0.5);
+  background: rgba(33, 33, 33, 0.5);
   backdrop-filter: blur(5px);
-  z-index: 10000;
+  z-index: 10001;
 }
 
 .bluer-box{
