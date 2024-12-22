@@ -1,20 +1,18 @@
 <script setup>
-
-import EventType from "~@/constant/EventType.js";
+import EventType from '~@/constant/EventType.js';
 
 /*
 onBlur
  */
 async function onBlur() {
   closePopup();
-
-  const [tab] = await chrome.tabs.query({active: true, currentWindow: true});
+  const [tab] = await chrome.tabs.query({ active: true, currentWindow: true });
   await chrome.tabs.sendMessage(
-      tab.id,
-      {type: EventType.ON_BLUR_MODE},
-      (response) => {
-        console.log("Message Send Response", response)
-      }
+    tab.id,
+    { type: EventType.ON_BLUR_MODE },
+    (response) => {
+      console.log('Message Send Response', response);
+    }
   );
 }
 
@@ -27,5 +25,7 @@ function closePopup() {
 </script>
 
 <template>
-  <button @click="onBlur">SUPERPIL</button>
+  <button @click="onBlur" class="func-button">영역 흐리기</button>
+  <button @click="onBlur" class="func-button">화면 캡처</button>
+  <button @click="onBlur" class="func-button">전체 화면 캡처</button>
 </template>

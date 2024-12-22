@@ -23,8 +23,6 @@ body.blur-mode-cursor *:hover {
   width: 1px;
   height: 1px;
   border: 1px dashed #000;
-  background: rgba(224, 222, 222, 0.5);
-  backdrop-filter: blur(5px);
   z-index: 10001;
 }
 
@@ -45,4 +43,78 @@ body.blur-mode-cursor *:hover {
   border-radius: 100%;
   z-index: 10001;
   cursor: grab;
+}
+
+.bluer-box:hover .bluer-box-setting-button {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  width: 15%;
+  height: 15%;
+  background-image: url('~@/content/assets/settings.png');
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: contain;
+}
+
+.bluer-setting-box-on {
+  position: fixed;
+  top: 0;
+  left: 50%;
+  transform: translate(-50%, 0%);
+  background: #242424;
+  width: 20%;
+  padding: 15px;
+  z-index: 10001;
+  border-radius: 5px;
+  color: #ffffff;
+}
+
+.bluer-setting-box-off {
+  display: none;
+}
+
+.on-setting-bluer-box {
+  border: 1px dashed #737373 !important;
+}
+
+.bluer-setting-box-list {
+  color: #ffffff;
+  padding: 5px 0;
+}
+
+.bluer-setting-box-label-box {
+  padding: 3px 0;
+}
+
+.bluer-setting-box-label-name {
+}
+
+.bluer-setting-box-label-value{
+}
+
+.bluer-setting-box-label-input{
+  width: 100%;
+}
+
+.blur-setting-box-button-box {
+  display: flex;
+  justify-content: right;
+}
+
+.blur-setting-buttons {
+  padding: 2% 5%;
+  color: #ffffff;
+  border-radius: 5px;
+  font-size: 10px;
+}
+
+.blur-box-delete-button {
+  background: crimson;
+}
+
+.blur-box-done-button {
+  background: royalblue;
+  margin-right: 5px;
 }
