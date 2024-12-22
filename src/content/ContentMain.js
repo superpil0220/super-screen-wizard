@@ -1,11 +1,11 @@
 import '~@/content/assets/ContentStyle.css';
-import EventType from '~@/constant/EventType.js';
+import channel from '~@/constant/Channel.js';
 import { blurService } from '~@/content/service/BlurService.js';
 
 chrome.runtime.onMessage.addListener((request, sender, sendResponse) => {
-  if (request.type === EventType.ON_BLUR_MODE) {
+  if (request.channel === channel.ON_BLUR) {
     blurService.createSingleBluerBox();
-    sendResponse({ message: 'Create Single Bluer Box' });
+    sendResponse({ message: 'On Blur' });
   } else {
     sendResponse({ message: 'Types that cannot be processed' });
   }
